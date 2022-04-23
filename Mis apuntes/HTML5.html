@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+  
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introducción a HTML5</title>
+  </head>
+  
+  <body>
+
+    <header>
+      <h1>Mis apuntes sobre HTML5</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="introduccion-a-HTML5.html">Introduccion a HTML5</a></li>
+          <li><a href="herramientas-que-utilizan-los-desarrolladores-profesionales.html">Herramientas que utilizan los desarrolladores profesionales</a></li>
+          <li><a href="atajos-de-teclado.html">Atajos de teclado</a></li>
+          <li><a href="git.html">GIT</a></li>
+        </ul>
+      </nav>
+    </header>
+    
+    <h2>¿Qué es HTML?</h2>
+    <p>
+      &nbsp;<strong>HyperText Markup Language</strong>= Lenguaje de marcado de hipertexto. Formado por <strong>etiquetas</strong>. Una <strong>etiqueta</strong> es un elemento que contiene información para darle un significado determinado. Forman la base del documento HTML. Existe un número finito de etiquetas, son elementos concretos, y cada uno tiene una función específica. Se pueden anidar etiquetas dentro de otras etiquetas.
+    </p>
+    <p>
+      &nbsp;Acceso a una página web:
+
+      <ol>
+        
+        <li>
+          El navegador solicita un documento de texto (documento HTML) al servidor.
+        </li>
+        <li>
+          El navegador muestra el contenido interpretado.
+        </li>
+      
+      </ol>
+    </p>
+
+    <h2>Semántica en HTML5</h2>
+    <p>
+      &nbsp;En los documentos HTML se estructura y <strong>se dota de significado a la información</strong>. Especialmente en HTML5, las etiquetas se utilizan para indicar información semántica de la página web, dejando todo lo relacionado con el aspecto visual al lenguaje de estilos <strong>CSS</strong> (separación de la presentación al contenido). El objetivo de esto se debe a la tendencia a un internet autónomo capaz de procesar, analizar y entender la información para un mejor posicionamiento en la web.
+    </p>
+
+    <h2>Estructura de una etiqueta HTML</h2>
+    <p>
+      < etiqueta atributo="valor" > Contenido < /etiqueta >
+
+      <dl>
+        <dt><strong>Etiqueta</strong></dt>
+        <dd>
+          &nbsp;Es posible escribirla en mayúculas pero <strong>se recomienda siempre hacerlo en minúsculas</strong>. No se puede escribir cualquier cosa en forma de etiqueta (elementos concretos). Para la mayoría es obligatorio escribir una etiqueta de cierre, aunque existen excepciones.
+        </dd>
+
+        <dt><strong>Atributo</strong></dt>
+        <dd>
+          &nbsp;Determinan cierta información sobre la etiqueta en la que se encuentran o su modo de actuar. Cada una tiene una misión y comportamiento concreto. La mayoría <strong>van asociados a un valor</strong>. Existen atributos que <strong>son específicos de ciertas etiquetas</strong> (y que pueden ser opcionales u obligatorios) y otros que <strong>son válidos para varias etiquetas</strong>. <br> &nbsp;Es posible escribir el valor de un atributo entre comillas simples pero <strong>se recomienda hacerlo entre comillas dobles</strong>. <br> &nbsp;Existen 3 tipos de atributos:
+          <ul>
+            <li>
+              <strong>Conjunto finito de valores</strong>. Aquellos que tienen un número limitado de valores válidos.
+            </li>
+
+            <li>
+              <strong>Valores libres</strong>. Como una URL o un determinado texto.
+            </li>
+
+            <li>
+              <strong>Valores <em>booleanos</em></strong>. Aquellos que solo tienen como valor <strong>true</strong> o <strong>false</strong>, aunque <strong>no es válido indicar literalmente su valor</strong>: Para indicar que el valor es true, se puede escribir el atributo sin más, se puede escribir <em>atributo=""</em> o se puede poner como valor el nombre del atributo. Para indicar que el valor es false, directamente no se escribe el atributo (es el valor por defecto).
+            </li>
+          </ul>
+        </dd>
+     
+      </dl>
+    
+    </p>
+
+    <h5>Bibliografía</h5>
+    <p>
+      <a href="https://lenguajehtml.com/html/introduccion/que-es-html/" target="_blank" rel="noopener noreferer">Manz.dev | Lenguaje HTML / Introducción a HTML5 / ¿Qué es HTML?</a>
+      <br>
+      <a href="https://lenguajehtml.com/html/introduccion/estructura-etiqueta-html/" target="_blank" rel="noopener noreferer">Manz.dev | Lenguaje HTML / Introducción a HTML5 / Estructura de una etiqueta HTML</a>
+    </p>
+  </body>
+</html>

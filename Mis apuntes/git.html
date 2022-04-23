@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Aprendiendo GIT</title>
+  <meta name="description" content="Mis apuntes sobre el lenguaje de control de versiones GIT">
+  <link rel="icon" type="image/ico" href="img/git.ico">
+  <link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+
+  <header>
+    <h1>GIT</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="introduccion-a-HTML5.html">Introduccion a HTML5</a></li>
+        <li><a href="herramientas-que-utilizan-los-desarrolladores-profesionales.html">Herramientas que utilizan los desarrolladores profesionales</a></li>
+        <li><a href="atajos-de-teclado.html">Atajos de teclado</a></li>
+        <li><a href="git.html">GIT</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h2>¿Qué es GIT?</h2>
+    <p>
+      <strong>GIT</strong> es un sistema distribuido de control de versiones, es decir, un sistema que nos permite tener un historial completo de todo el código desarrollado sobre una aplicación. Este sistema nos permite trabajar el código de manera descentralizada, lo que quiere decir que cuando varios desarrolladores están trabajando sobre una misma aplicación, no dependen de un servidor central para acceder a los otros cambios que han ido realizando los demás, para actualizar sus propios cambios ni tan siquiera para acceder al mismo proyecto. Con GIT, cada desarrollador tiene una copia completa de todas las versiones en su máquina y tiene la opción de subir los cambios que han realizado a un servidor central (para sincronizar proyectos) el cual no es tanto problema si falla ya que cada desarrollador tiene una copia del proyecto completo en su máquina.
+    </p>
+  
+    <h2>Usos de GIT</h2>
+    <ul>
+      <li>Historial de nuestro código y el de los demás.</li>
+      <li>Almacenamiento del código.</li>
+      <li>Facilidades para el trabajo en equipo.</li>
+      <li>Fácil acceso a un posible error en una determinada versión del código o fase del proyecto.</li>
+    </ul>
+  
+    <h2>Herramientas GIT de manera gráfica</h2>
+    <ul>
+      <li>Sourcetree</li>
+      <li>Gitkraken</li>
+      <li>Github Desktop</li>
+    </ul>
+  
+    <h2>Flujo de trabajo de GIT</h2>
+    <span>Computador -> Stage -> Commit - > Server</span>
+    <p>
+      <dl>
+        <dt>Computador</dt>
+        <dd>Proyecto con sus versiones almacenador en nuestro ordenador.</dd>
+  
+        <dt>Stage</dt>
+        <dd>Etapa intermedia en la que seleccionamos qué archivos o qué cambios queremos añadir al repositorio.</dd>
+  
+        <dt>Commit</dt>
+        <dd>Etapa de confirmación de los archivos o cambios del proyecto que queremos añadir al repositorio.</dd>
+  
+        <dt>Server</dt>
+        <dd>Etapa opcional en la que pasamos lor archivos o cambios elegidos a un servidor eterno/nube/aplicación tipo Github.</dd>
+      </dl>
+    </p>
+  
+    <h2>GIT en terminal</h2>
+    <h3>Comandos de configuración</h3>
+    <dl>
+      <dt>git --version</dt>
+      <dd>Nos indica la versión de GIT que tenemos instalada en la máquina.</dd>
+  
+      <dt>git config --global</dt>
+      <dd>Sirve para que los cambios en la configuración que vayamos a realizar se ejecuten de manera global y no en un solo proyecto en particular.</dd>
+  
+      <dt>git config --global user.name</dt>
+      <dd>Sirve para elegir nuestro nombre de usuario en GIT. Si el nombre del usuario lleva algún espacio entre medias, se debe escribir el nombre completo entre comillas dobles.</dd>
+  
+      <dt>git config --global user.email</dt>
+      <dd>Para configurar nuestro email en GIT.</dd>
+  
+      <dt>git config --global core.editor</dt>
+      <dd>Sirve para configurar nuestro editor de texto por defecto para GIT. Para indicar a git que, por ejemplo, nuestro editor de texto por defecto es VS Code, se debe escribir este comando seguido de <strong>code --wait</strong>. Con el --wait, le indicamos a la terminal que se quede esperando a que cerremos nuestro editor de texto elegido para efectuar los cambios en la configuración. Una vez hecho esto, si escribimos el comando <strong>git config --global -e</strong>, podremos comprobar nuestro archivo de la configuración global de nuestro editor. Si todo salió correcto, este archivo se nos abrirá en VS Code y veremos los datos que acabamos de actualizar.</dd>
+  
+      <dt>git config --global core.autocrlf true/false</dt>
+      <dd>Los sitemas de Windows y Unix agregan diferentes caracteres especiales cada vez que se agrega un salto de línea en el código para marcar dicho salto de línea.
+        <ul>
+          <li>Windows utiliza CR (Carriage Return / Retorno de carro) y LF (Line Feed / Salto de línea).</li>
+          <li>Linux/Mac utiliza solo LF.</li>
+        </ul>
+        Por lo tanto, cuando dos personas se encuentran trabajando sobre un mismo repositorio pero un sus PCs tienen diferentes SOs, se necesita configurar GIT con este comando.
+        <ul>
+          <li>El usuario que utilice Windows, necesitará eliminar el caracter CR de su código cada vez que desee subir su código al repositorio y añadirlo cuando desee descargárselo. En este caso, el valor que hay que utilizar para este comando es True.</li>
+          <li>Por el contrario, un usuario que utilice Linux o Mac no agrega este caracter CR, por lo que GIT en este caso no debería realizar ninguna acción sobre el código. Pero si por alguna razón nuestro editor de texto utiliza este tipo de caracter o si el usuario lo agregó manualmente por el motivo que sea, GIT debe eliminarlo, por lo que utilizaríamos el valor Input.</li>
+        </ul>
+      </dd>
+  
+      <dt>git config -h</dt>
+      <dd>Nos muestra un listado con todos los comandos necesarios para realizar diferentes tipos de configuración en GIT.</dd>
+    </dl>
+  
+    <h3>Comandos básicos de BASH</h3>
+    <dl>
+      <dt>ls</dt>
+      <dd>Sirve para mostrar una lista de todos los directorios que se encuentran en el directorio principal de la máquina (carpeta de usuario).</dd>
+  
+      <dt>pwd</dt>
+      <dd>Muestra la ruta del directorio en el que nos encontramos.</dd>
+  
+      <dt>cd + nombre de directorio</dt>
+      <dd>Sirve para entrar en uno de los directorios contenidos en el directorio en el que nos encontramos. Si el nombre del directorio consta de dos o más palabras separadas, debe escribirse entre comillas.</dd>
+      
+      <!-- Resulta que, utilizando este comando, no me dejaba entrar en una carpeta que tengo que se llama "- Mis apuntes", me decía algo así como que la acción no era válida. Buscando cómo solucionarlo, he encontrado que, en BASH, cualquier cosa escrita después de un guión medio la terminal lo toma como una orden, como parte de un comando, ya que el guión medio es un caracter especial utilizado para ciertos comandos. La solución está en colocar antes del nombre dos guiones seguidos, ya que para las herramientas GNU, estos caracteres se utilizan para decirle a la terminal que lo que viene inmediatamente después no es una línea de comandos. -->
+  
+      <dt>cd + ..</dt>
+      <dd>Sirve para movernos a una carpeta anterior de la ruta en la que nos encontramos. Con ../.. iríamos dos carpetas hacia atrás y así sucesivamente.</dd>
+  
+      <dt>mkdir + nombre</dt>
+      <dd>Sirve para crear un directorio. El nombre del directorio nuevo debe escribirse entre comillas si consta de dos o más palabras separadas.</dd>
+  
+      <dt>git init</dt>
+      <dd>Sirve para iniciar un proyecto nuevo de GIT. Se nos crea un directorio oculta llamada .git en la que nos aparecen una serie de archivos y directorios utilizados en git para poder gestionar los proyectos <strong>(detalle de implementación)</strong>. Aquí es donde se almacenarán las distintas versiones del código del proyecto, las distintas ramas, los commit, etc. Esta carpeta .git suele ignorarse siempre en todos los repositorios que se vayan a crear, no se pasa al servidor central ni se comparte entre desarrolladores.</dd>
+  
+      <dt>ls -a</dt>
+      <dd>Muestra las carpetas y archivos ocultos.</dd>
+    </dl>
+  
+    <h3>Comandos de trabajo GIT</h3>
+    <p>
+      <dl>
+        <dt>code .</dt>
+        <dd>Se utiliza para abrir nuestro editor de texto VSCode con un proyecto abierto en la carpeta en la que nos encontremos en la terminal. Code indica que queremos que se abra el editor y el punto indica que queremos que se abra en la carpeta en la que nos encontramos.</dd>
+  
+        <dt>git status</dt>
+        <dd>Nos indica el estado actual del repositorio en que nos encontramos: La rama en la que nos encontramos, lo commits que tengamos pendientes de confirmar, los cambios que tengamos pendientes de confirmar de los archivos que tengamos en seguimiento y los archivos que tengamos en el directorio del repositorio sin seguimiento.</dd>
+        
+        <dt>git add</dt>
+        <dd>Comando utilizado para seleccionar los archivos del directorio del proyecto que queremos seguir con git. Se puede relacionar de muchas maneras, por ejemplo:
+          <dl>
+            <dt>git add (nombre de un archivo.extensión)</dt>
+            <dd>Se selecciona un archivo en concreto</dd>
+  
+            <dt>git add .(extensión)</dt>
+            <dd>Seleccionaríamos todos los archivos que tuvieran una extensión en concreto.</dd>
+  
+            <dt>git add .</dt>
+            <dd>Se seleccionan todos los archivos que se encuentren en el directorio. No es recomendable utilizarlo si no se está seguro del todo ya que podríamos no darnos cuenta de haber realizado cambios en archivos que no queremos añadir o agregar cualquier tipo de archivo archivo que nos ocuparía espacio en el repositorio innecesariamente o que directamente no nos damos cuenta de que lo tenemos ahí guardado y no lo queremos añadir.</dd>
+          </dl>
+          Este comando también se utiliza cuando queremos eliminar un archivo (no tengo muy claro como).
+        </dd>
+        
+        <dt>git commit -m "comentario sobre lo que se está comiteando"</dt>
+        <dd>Con este comando, se comprometen los cambios/archivos previamente seleccionados y, además, se agrega un comentario sobre los mismos. Se recomienda hacerlo de esta manera, aunque también se puede escribir "git commit" a secas. De esta manera, se nos abriría una ventana con el editor de cógigo predeterminado que tenemos configurado con un texto que nos dice que escribamos el mensaje sobre los cambios que estamos comprometiendo, el archivo, la rama en la que estamos,etc.</dd>
+
+        <dt>rm (nombre de archivo.extension)</dt>
+        <dd>Este comando se utiliza para elminar un archivo de nuestro repositorio de git. Al igual que para añadirlo, el proceso de eliminación debe pasar por las mismas fases. Una vez utilizamos este comando rm y miramos el status, vemos que el archivo se encuentra seleccionado. Y seguimos el mismo proceso que al añadirlo: git add para pasarlo a la fase de stage, git commit -m "" para comitearlo y escribir un mensaje.</dd>
+
+        <dt>git rm (nombre de archivo.extension)</dt>
+        <dd>Este comando nos permite ahorrarnos el paso intermedio del anterior a la hora de eliminar un archivo del repositorio. Se selecciona el archivo que queremos eliminar del repositorio y se elimina directamente.</dd>
+      </dl>
+
+      <dt>git restore --stage (archivo.extensión)</dt>
+      <dd>Este comando se utiliza para sacar un cambio/archivo que previamente hemos pasado a la etapa de stage.</dd>
+
+      <dt>git restore (archivo.extension)</dt>
+      <dd></dd>
+    </p>
+  </main>
+
+  <footer>
+    <h5>Glosario</h5>
+    <dl>
+      <dt>Rollback</dt>
+      <dd>Cuando se vuelve de una versión actual con un error a una versión anterior sin errores.</dd>
+      <dt>GitBash</dt>
+      <dd>Herramienta para windows que funciona como un emulador para poder utilizar los comandos tipo UNIX (Linux y Mac)</dd>
+    </dl>
+  
+    <h5>Bibliografía</h5>
+    <p>
+      <a href="https://www.youtube.com/watch?v=VdGzPZ31ts8&t=42s" target="_blank" rel="noopener noreferer">Aprende GIT ahora! curso completo GRATIS desde cero</a>
+    </p>
+  </footer>
+</body>
+</html>
