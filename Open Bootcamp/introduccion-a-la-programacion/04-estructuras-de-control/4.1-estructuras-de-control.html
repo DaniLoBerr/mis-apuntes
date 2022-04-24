@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+  <body>
+    
+    <h1>Estructuras/Sentencias de control</h1>
+    <p>
+      Serie de órdenes/instrucciones que permiten modificar el flujo de ejecución de un programa. Pueden ser secuenciales, iterativas o de control avanzadas. Se basan en la utilización de condiciones para comparar situaciones y que el programa ejecute una u otra opción según la situación. Cuando se evalua una condición, solo se pueden dar dos resultados (lógica booleana).
+
+      Con las estructuras de control se puede:
+
+      - De acuerdo con una condición, ejecutar un grupo u otro de sentencias (If-Then-Else)
+      - De acuerdo con el valor de una variable, ejecutar un grupo u otro de sentencias (Switch-Case)
+      - Ejecutar un grupo de sentencias solo cuando se cumpla una condición (Do-While)
+      - Ejecutar un grupo de sentencias hasta que se cumpla una condición (Do-Until)
+      - Ejecutar un grupo de sentencias un número determinado de veces (For-Next)
+    </p>
+    
+    <h2>Tipos de condiciones</h2>
+    <ul>
+      <li>
+        Condiciones lógicas
+        <dl>
+          <dt>Y</dt>
+          <dd>Comparación en la que se deben cumplir dos o más situaciones para que las ordenes se ejecuten. Habitualmente, en informática, se representa como: "Y" = &&</dd>
+
+          <dt>O</dt>
+          <dd>Comparación en la que se debe cumplir o una u otra o ninguna de las situaciones para que las ordenes se ejecuten. Habitualmente, en informática, se representa como: "O" = ||</dd>
+        </dl>
+      </li>
+      <li>
+        Condiciones comparativas
+        <ul>
+          <li>Mayor que (>)</li>
+          <li>Menor que (<)</li>
+          <li>Mayor o igual que (>=)</li>
+          <li>Menor o igual que (<=)</li>
+          <li>Igual a (==)</li>
+          <li>Distinto a (!=)</li>
+        </ul>
+      </li>
+    </ul>
+    <p>
+      <!--Ejemplos Pseudocódigo-->
+
+      40 mayor que 30 => cierto
+      40 menor que 30 => falso
+
+      (40 mayor que 30) y (30 menor que 50) => cierto y cierto => cierto
+      (40 mayor que 30) o (30 mayor que 50) => cierto o falso => cierto
+      <!--Lógica en informática: si cierto y/o falso = cierto-->
+      <!--Mirar tablas de la verdad-->
+    </p>
+    
+    <h2>Estructura de control de selección</h2>
+    <h3>Condicional simple: if / else if / else</h3>
+    <p>Si se cumple la condición o las condiciones (if), se ejecutan todas las acciones indicadas en el cuerpo de la sentencia. En caso contrario, si se cumple otra condición (else if), se ejecutan las acciones contenidas en esa sentencia. En cualquier otro caso (else), si no se ha cumplido ninguna de las condiciones anteriores, se ejecutarán las de esta última sentencia, denominada fallback. El fallback es la acción última por defecto, la acción que se tiene que hacer porque, por circunstancias del código, se debe realizar alguna acción.</p>
+    <p>No es necesario escribir toda la sintaxis completa, se puede utilizar solo un if por ejemplo. Lo importante es saber que, a nivel lógico, se puede tener una condición, y esa condición se puede evaluar de forma consecutiva: si pasa esto, haz esto; si pasa esto otro, haz esto otro; y, en cualquier otro caso, haz esto último.</p>
+    <p>if es una sentencia imperativa</p>
+    <p>Los if están en casi todos los lenguajes de programación.</p>
+
+      <!--Ejemplos Pseudocódigo-->
+    <code>
+      Var Estacion = "verano" <!--variable declarada con la que trabajar-->
+      Var Temperatura = 21
+
+      Si estacion igual a invierno, entonces: <!--Declaración de la condición if respecto a la variable-->
+        beber_sopa() <!--acciones a ejecutar si se cumple la condición-->
+        taparse_con_la_manta()
+
+      En caso contrario, si (estacion igual a primavera) y (temperatura menor o igual que 20), entonces: <!--Declaración de la condición else if ("elif" en algunos)--> <!--Declaración de dos condiciones-->
+        ir_en_manga_corta()
+        ir_al_parque()
+
+      En caso contrario, entonces: <!--Declaración de la condición else-->
+        ir_a_la_playa()
+    </code>
+    <p>
+      Lo importante de estas estructuras es 
+    </p>
+
+    <h2>Estructuras de control interativas o bucles</h2>
+    <ul>
+      <li>while</li>
+      <li>do while</li>
+      <li>for</li>
+      <li>switch</li>
+    </ul>
+
+  </body>
+</html>
