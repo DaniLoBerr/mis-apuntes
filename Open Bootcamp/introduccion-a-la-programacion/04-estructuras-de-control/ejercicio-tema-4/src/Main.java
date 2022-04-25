@@ -17,6 +17,7 @@
 public class Main {
     public static void main(String[] args) {
         int numeroIf = 0;
+        int numeroWhile = 1;
 
         if (numeroIf > 0) {
             System.out.println("numeroIf es positivo");
@@ -24,6 +25,11 @@ public class Main {
             System.out.println("numeroIf es negativo");
         } else {
             System.out.println("numeroIf es igual a 0");
+        }
+
+        while (numeroWhile < 3) {
+            System.out.println(numeroWhile);
+            numeroWhile = numeroWhile + 1; // Expresión corta sería: numeroWhile++;
         }
     }
 }

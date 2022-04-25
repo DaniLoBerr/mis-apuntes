@@ -91,6 +91,59 @@
       <li>for</li>
       <li>switch</li>
     </ul>
+    <p>
+      Un bucle en programación es un fragmento de código que se va a ejecutar repetidamente mientras se cumpla cierta condición. Una interación es una de las repeticiones del bucle.
+    </p>
 
+    <h3>Bucle while</h3>
+    <p>
+      Este es un bucle tipo "mientras", mientras se cumpla cierta condición, se ejecutarán las acciones contenidas en el bucle. Ejemplo de psudocódigo:
+      <code>
+        Var contador = 20
+
+        Mientas (contador mayor que 0), entonces:
+          Resta 5 al contador
+      </code>
+    </p>
+    <p>
+      Curiosidad: El lenguaje "GO" no tiene esta sentencia.
+    </p>
+
+    <h3>Bucle do while</h3>
+    <p>
+      Este bucle es parecido al while pero con la diferencia de que en el while no siempre se cumplen las acciones de la sentencia, se realizan mientras se cumpla la condición; pero, en los bucles do while, primero se ejecuta la acción y depués se analiza la condición para ver si se ha de realizar más veces. La acción contenida en la sentencia se ejecuta, como poco, una vez.
+      <code>
+        Var contador = 10
+
+        Haz
+          Resta uno al contador
+        Mientras (contador sea mayor que 10)
+      </code>
+    </p>
+    <p>
+      Pocos lenguajes tienen esta estructura porque realmente se podría hacer lo mismo con un while pero colocando el cuerpo de la sentencia fuera, es decir:
+      <code>
+        Var contador = 20
+
+        Resta 5 al contador
+        mientras (contador mayor que 0) <!--No estoy seguro de que este párrafo esté del todo bien-->
+      </code>
+    </p>
+
+    <h3>Bucle for</h3>
+    <p>
+      Es una especie de mezcla de todos los anteriores ya que funciona como un do while o un while con un if de por medio. Constan de 3 partes: inicialización, comparación y acción. Las sentencias de este tipo funcionan de la siguiente manera: Mientras se cumpla la parte de la inicialización, si se produce la parte de la comparación, realiza las acciones que se encuentran contenidas en la sentencia y después ejecuta la parte de la acción. En algunos lenguajes las tres son obligatorias de indicar, en algunos ninguna.
+      <code>
+        Var contador = 10
+
+        para (var contador = 10 <!--inicialización-->; contador mayor que 0 <!--comparación-->; resta uno al contador <!--acción-->)
+          imprime el valor de la variable contador
+      </code>
+
+      Lo que hace esta sentencia del ejemplo es que "mientras que la variable contador sea igual a 10 y hasta que la variable contador sea mayor que 0, imprime el valor de la variable contador y resta uno a la variable contador". Es importante saber eso, que la parte de la acción se ejecuta después de ejecutarse el código contenido en el cuerpo de la sentencia.
+    </p>
+    <p>
+      Normalmente, los for se utilizan cuando se quieren recorrer arrays o tipos de dato compuestos, mientras que los while se suelen utilizar para comparaciones cierto/falso.
+    </p>
   </body>
 </html>
