@@ -97,7 +97,7 @@
 
     <h3>Bucle while</h3>
     <p>
-      Este es un bucle tipo "mientras", mientras se cumpla cierta condición, se ejecutarán las acciones contenidas en el bucle. Ejemplo de psudocódigo:
+      Este es un bucle tipo "mientras", mientras se cumpla cierta condición, se ejecutarán las acciones contenidas en el bucle. Constantemente se está verificando si se cunple la condición para ejecutarse. Ejemplo de psudocódigo:
       <code>
         Var contador = 20
 
@@ -132,18 +132,56 @@
 
     <h3>Bucle for</h3>
     <p>
-      Es una especie de mezcla de todos los anteriores ya que funciona como un do while o un while con un if de por medio. Constan de 3 partes: inicialización, comparación y acción. Las sentencias de este tipo funcionan de la siguiente manera: Mientras se cumpla la parte de la inicialización, si se produce la parte de la comparación, realiza las acciones que se encuentran contenidas en la sentencia y después ejecuta la parte de la acción. En algunos lenguajes las tres son obligatorias de indicar, en algunos ninguna.
+      Es una especie de mezcla de todos los anteriores ya que funciona como un do while o un while con un if de por medio. Constan de 3 partes: inicialización, comparación y acción. Las sentencias de este tipo funcionan de la siguiente manera: Mientras se cumpla la parte de la inicialización, si se produce la parte de la comparación, realiza las acciones que se encuentran contenidas dentro de la sentencia y después ejecuta la parte de la acción. En algunos lenguajes las tres son obligatorias de indicar, en algunos ninguna.
       <code>
-        Var contador = 10
-
-        para (var contador = 10 <!--inicialización-->; contador mayor que 0 <!--comparación-->; resta uno al contador <!--acción-->)
-          imprime el valor de la variable contador
+       para (var contador = 10 <!--inicialización-->; contador mayor que 0 <!--comparación-->; resta uno al contador <!--acción-->)
+          imprime el valor de la variable contador <!--Contenido de la sentencia-->
       </code>
 
-      Lo que hace esta sentencia del ejemplo es que "mientras que la variable contador sea igual a 10 y hasta que la variable contador sea mayor que 0, imprime el valor de la variable contador y resta uno a la variable contador". Es importante saber eso, que la parte de la acción se ejecuta después de ejecutarse el código contenido en el cuerpo de la sentencia.
+      Lo que hace esta sentencia del ejemplo es que "mientras que la variable contador sea igual a 10, si la variable contador es mayor que 0, imprime el valor de la variable contador y resta uno a la variable contador". Es importante saber eso, que la parte de la acción se ejecuta después de ejecutarse el código contenido en el cuerpo de la sentencia.
     </p>
     <p>
-      Normalmente, los for se utilizan cuando se quieren recorrer arrays o tipos de dato compuestos, mientras que los while se suelen utilizar para comparaciones cierto/falso.
+      Normalmente, los for se utilizan cuando se quieren recorrer arrays o tipos de datos compuestos, mientras que los while se suelen utilizar para comparaciones cierto/falso. Digamos que el while es nada más que la parte de la comparación del for. Ejemplos en pseudocódigo de esto: de un while y de un for:
+      <code>
+        var temperatura = 14;
+        mientras (temperatura menor que 15)
+          poner_abrigo
+      </code>
+      <code>
+        <!--Array-->
+        var valores = |10|20|30|40|50| <!--Array de 5 elementos, 5 posiciones = |0|1|2|3|4|-->
+
+        para (posicion_en_array=0; posicion_e_array menor que longitud_del_array; posicion igual a posicion mas uno)
+          imprime el valor de la posicion actual en el array
+      </code>
     </p>
+    <p>
+      En los bucles, es habitual encontrarse la variable "i", que es la que se suele utilizar para indicar la posición actual en la que nos encontramos dentro del bucle. Es una convención.
+    </p>
+
+    <h3>Bucle swicht</h3>
+    <p>
+      Interruptor. Parecido al if. Bucle tipo "discierne" que se aplica sobre una condición. La diferencia entre usar un if/else if/else o un swicht depende un poco del gusto o de la guía de estilo. El profesor en este caso utiliza utiliza un switch cuando necesita utilizar más de dos else if, aunque hay que tener en cuenta que a veces no se pueden utilizar muchas comparaciones en un bucle switch. Es un bucle especialito.
+    </p>
+    <p>
+      Si utilizamos un bucle switch y se cumple la primera condición del mismo, pasaría una cosa en la mayoría de los lenguajes de programación que tienen la funcionalidad de switch, y es que se ejecutarían todas las acciones de todos los casos hasta el final del bucle. Para controlar esto, es necesario utilizar la palabra "break" (en Java, creo), que es una pabalabra reservada, después de cada caso, para romper la ejecución. Después del por defecto no haría falta. Con este bucle, no se realizaría ninguna acción de ningún caso hasta que se cumpliera la condición de alguno; y, a partir de él, se realizarían todas las acciones hasta el final del bucle si no se rompe el flujo.
+      <!--En el archivo de ejemplos de java, dejo un ejemplo de switch en el que no es necesario escribir un break después de cada case-->
+    </p>
+    <code>
+      Var estacion = "verano"
+
+      discierne (estacion)
+        caso "verano"
+          imprime "es verano"
+          rompe bucle
+
+        caso "invierno"
+          imprime "es invierno"
+          rompe bucle
+
+        por defecto
+          imprime "var estacion"
+
+    </code>
   </body>
 </html>

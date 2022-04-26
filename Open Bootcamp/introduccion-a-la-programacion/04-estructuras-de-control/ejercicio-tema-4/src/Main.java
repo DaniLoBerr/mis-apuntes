@@ -18,18 +18,40 @@ public class Main {
     public static void main(String[] args) {
         int numeroIf = 0;
         int numeroWhile = 1;
+        int numeroDoWhile = 2;
+        String estacion = "abril";
 
         if (numeroIf > 0) {
             System.out.println("numeroIf es positivo");
         } else if (numeroIf < 0) {
             System.out.println("numeroIf es negativo");
         } else {
-            System.out.println("numeroIf es igual a 0");
+            System.out.println("numeroIf es igual a 0" + " - Ejemplo if/else if/else");
         }
 
         while (numeroWhile < 3) {
-            System.out.println(numeroWhile);
             numeroWhile = numeroWhile + 1; // Expresión corta sería: numeroWhile++;
+            System.out.println(numeroWhile + " - Ejemplo while");
+        }
+
+        do {
+            numeroDoWhile = numeroDoWhile + 1;
+            System.out.println(numeroDoWhile + " - Ejemplo do while");
+        } while (numeroDoWhile < 3);
+
+        for (int numeroFor = 0; numeroFor <= 3; numeroFor = numeroFor + 1) {
+            System.out.println (numeroFor + " - Ejemplo for");
+        }
+
+        switch (estacion) {
+            case "otoño":
+            case "invierno":
+            case "primavera":
+            case "verano":
+                System.out.println(estacion + " - Ejemplo switch");
+                break;
+            default:
+                System.out.println("El valor no se corresponde con una estación" + " - Ejemplo switch");
         }
     }
 }
