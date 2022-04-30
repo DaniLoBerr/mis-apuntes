@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -38,17 +38,17 @@
 
     - public static: (lo ignoramos de momento).
 
-    - int: Tipo de dato de retorno de la función. Este elemento nos indica el tipo de dato que nos va a devolver la función cuando se ejecute. En este caso, un "interer", un entero.
+    - int: Tipo de dato de retorno de la función. Este elemento nos indica el tipo de dato que nos va a devolver la función cuando se ejecute. En este caso, un "integer", un entero.
 
     - suma: nombre de la función. En este caso, suma.
 
-    - (int a, int b): Parámetros que acepta la función. Entre paréntesis. Funcionan como dos variables que solo existen dentro de la función. Vienen marcados por un tipo de dato, es decir, que los parametros que se vayan a intruducir en la función deben ser del tipo indicado. Cuando yo invoque a una función, le tengo que pasar entre paréntesis los datos en el mismo tipo que nos indica la función. En los parámetros se pueden aceptar unos tipos de datos y luego que la función devuelva otros distintos. Pero eso si, si al principio de la función se determina que el tipo de dato de retorno es int, se debe devolver un int, si se determina un float, se ha de devolver un float, un string, un string, indistintamente de los parámetros que se indican en esta parte. Puede ser que los tipos de datos que se pidan en estos parámetros sean unos y que luego la función devuelva otros. Estos parámetros son varibles que solo existen dentro de la función, dentro del cuerpo de este programa. Se crean en la memoria en el momento en que se invoca a la función y, cuando esta termina, las variable dejan de existir.
+    - (int a, int b): Parámetros que acepta la función. Entre paréntesis. Funcionan como dos variables que solo existen dentro de la función. Vienen marcados por un tipo de dato, es decir, que los parametros que se vayan a intruducir en la función deben ser del tipo indicado. Cuando yo invoque a una función, le tengo que pasar entre paréntesis los datos en el mismo tipo que nos indica la función. En los parámetros se pueden aceptar unos tipos de datos y luego que la función devuelva otros distintos. Pero eso si, si al principio de la función se determina que el tipo de dato de retorno es int, se debe devolver un int, si se determina un float, se ha de devolver un float, un string, un string, indistintamente de los parámetros que se indican en esta parte. Estos parámetros son varibles que solo existen dentro de la función, dentro del cuerpo de este programa. Se crean en la memoria en el momento en que se invoca a la función y, cuando esta termina, las variable dejan de existir.
 
 
 
     - return a + b: Devolución de la suma de a+b.
 
-  En resumen, esta es una función que acepta dos parámetros, a y b, y que devuleve un interer.
+  En resumen, esta es una función que acepta dos parámetros, a y b, y que devuleve un integer.
   </p>
 
   <h3>Cuerpo de una función</h3>
@@ -97,12 +97,12 @@
   </p>
 
   <p>
-    Las funciones pueden aceptar parámetros o no, pueden aceptar varios parámetros, pueden aceptar parámetros de tipos diferentes y pueden devolver parámetros del tipo que nosotros queramos. Además, la mayoría de los lenguajes de programación actuales son modulares, es decir, que se pueden dividir los programas en partes más pequeñas, como por ejemplo un conjunto de funciones, y utilizarse en otros programas, compartirlas. Se pueden compartir dichas partes o módulos, exportar un conjunto de paquetes de funciones enlibrerías y que las utilicen otros desarrolladores (un jar de Java, por ejemplo).
+    Las funciones pueden aceptar parámetros o no, pueden aceptar varios parámetros, pueden aceptar parámetros de tipos diferentes y pueden devolver parámetros del tipo que nosotros queramos. Además, la mayoría de los lenguajes de programación actuales son modulares, es decir, que se pueden dividir los programas en partes más pequeñas, como por ejemplo un conjunto de funciones, y utilizarse en otros programas, compartirlas. Se pueden compartir dichas partes o módulos, exportar un conjunto de paquetes de funciones en librerías y que las utilicen otros desarrolladores (un jar de Java, por ejemplo).
   </p>
 
   <h3>Formas de pasar valores a las funciones</h3>
   <p>
-    Entender esto tiene su intringulis porque algunos lenguajes de programación (como Java) esconden las operaciones que suceden por debajo del programa. Por ejemplo, esto que vamos a ver ahora se hace mediante punteros y en Java estos punteros no existen, no existe este concepto, los procedimientos que otros lenguajes hacen con los punteros (comoen GO, donde si se trabaja con ellos) en Java se producen por debajo, no se ven estos procesos. Dicho esto, cuando invocamos a una función, se le pueden pasar parámetros de dos maneras.
+    Entender esto tiene su intringulis porque algunos lenguajes de programación (como Java) esconden las operaciones que suceden por debajo del programa. Por ejemplo, esto que vamos a ver ahora se hace mediante punteros y en Java estos punteros no existen, no existe este concepto, los procedimientos que otros lenguajes hacen con los punteros (como en GO, donde si se trabaja con ellos) en Java se producen por debajo, no se ven estos procesos. Dicho esto, cuando invocamos a una función, se le pueden pasar parámetros de dos maneras.
     <ul>
       <li>Paso por valor</li>
       <li>Paso por referencia</li>
@@ -110,7 +110,7 @@
   </p>
   <h4>Paso por valor</h4>
   <p>
-    Es el ejemplo que hemos visto antes. Nosotros antes llamamos a la función suma y le indicamos que el primer parámetro fuera un 10 y que el segundo parámetro fuera un 30. Después, cuando invocamos a la función, los parámetros de esta se sustituyen por los parámetros anteriormente incicados, pero lo que se hace es crearse una copia, los valores antes indicados se copian en la función. Y no es que solamente se copie el valor, si no que se copia también el tipo de dato.
+    Es el ejemplo que hemos visto antes. Nosotros antes llamamos a la función suma y le indicamos que el primer parámetro fuera un 10 y que el segundo parámetro fuera un 30. Después, cuando invocamos a la función, los parámetros de esta se sustituyen por los parámetros anteriormente indicados, pero lo que se hace es crearse una copia, los valores antes indicados se copian en la función. Y no es que solamente se copie el valor, si no que se copia también el tipo de dato.
     <code>
       public class Main {
         public static void main(String[] args) {
@@ -129,7 +129,7 @@
         }
       }
     </code>
-    En este caso anterior vemos que los parámetros cuando llamamos a la función nos ocupan 4 bytes cada uno en la memoria y cuando invocamos a la función, estos parámetros y su tipo de dato se copian y nos ocupan otros 4 bytes cada uno, en total 16 bytes. Esto es importante saberlo porque cuando trabajemos con BBDD y hagamos una consulta que nos devuelva mucho resultados, no se deben copiar todos esos resultados en la función ya que se duplicaría el uso de la memoria.
+    En este caso anterior vemos que los parámetros cuando llamamos a la función nos ocupan 4 bytes cada uno en la memoria y cuando invocamos a la función, estos parámetros y su tipo de dato se copian y nos ocupan otros 4 bytes cada uno, en total 16 bytes. Esto es importante saberlo porque cuando trabajemos con BBDD y hagamos una consulta que nos devuelva muchos resultados, no se deben copiar todos esos resultados en la función ya que se duplicaría el uso de la memoria.
   </p>
 
   <p>
@@ -190,16 +190,16 @@
         public static void main (String[] args) {
             Coche miCoche = new Coche(); <!--Aquí estamos llamando a la clase "Coche" y creando el objeto "miCoche" a partir de ella. Se crea con el comando "new Coche()"-->
             miCoche.SumarPuerta(); <!--Aquí estamos invocando a la función para que realice la acción de sumar una puerta. Cada vez que se invoque, añadirá una puerta-->
-            System.out.println(miCoche.puertas); <!--Con esto se imprimirá el resultado de la variable piertas que tiene el obejto miCoche-->
+            System.out.println(miCoche.puertas); <!--Con esto se imprimirá el resultado de la variable puertas que tiene el objeto miCoche-->
         }
     
     }
     
-    class Coche { <!---->
-        public int puertas = 3; <!--Aquí vemos las propiedades del obejto, en este caso, un número de puertas-->
+    class Coche { 
+        public int puertas = 3; <!--Aquí vemos las propiedades del objeto, en este caso, un número de puertas-->
     
         public void SumarPuerta() { <!--Aquí tenemos un método del objeto que consiste en una función que lo que hace es sumar más puertas a la variable puertas del objeto-->
-            this.puertas++; <!--Este elemento hace que se sumen las puertas, manipula los datos que hay en la variable "puertas"-->
+            this.puertas++; <!--Este elemento hace que se sumen las puertas, manipula los datos que hay en la variable "puertas"--> <!--expresión corta para sumar-->
         }
     }
     </code>

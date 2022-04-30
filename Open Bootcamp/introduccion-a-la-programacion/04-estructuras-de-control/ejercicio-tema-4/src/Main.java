@@ -15,11 +15,12 @@
 //
 //Por último, para el Switch, deberás crear la variable estacion, y distintos case para las cuatro estaciones del año. Dependiendo del valor de la variable estacion se deberá mandar un mensaje por consola informando de la estación en la que está. También habrá que poner un default para cuando el valor de la variable no sea una estación.
 public class Main {
+
     public static void main(String[] args) {
         int numeroIf = 0;
         int numeroWhile = 1;
         int numeroDoWhile = 2;
-        String estacion = "abril";
+        String estacion = "verano";
 
         if (numeroIf > 0) {
             System.out.println("numeroIf es positivo");
@@ -38,6 +39,7 @@ public class Main {
             numeroDoWhile = numeroDoWhile + 1;
             System.out.println(numeroDoWhile + " - Ejemplo do while");
         } while (numeroDoWhile < 3);
+        // En el ejercicio resuelto de la plataforma, ellos hacen que el número de la variable sea igual al de la comparación, entonces la sentencia realiza la acción con el do y luego compara. Al no cumplirse la condición, no se repite el bucle.
 
         for (int numeroFor = 0; numeroFor <= 3; numeroFor = numeroFor + 1) {
             System.out.println (numeroFor + " - Ejemplo for");
@@ -48,10 +50,12 @@ public class Main {
             case "invierno":
             case "primavera":
             case "verano":
-                System.out.println(estacion + " - Ejemplo switch");
+                System.out.println("Estamos en " + estacion + " - Ejemplo switch");
                 break;
             default:
                 System.out.println("El valor no se corresponde con una estación" + " - Ejemplo switch");
         }
+
+        // En el ejercicio resuelto por la plataforma, en esto del switch te ponen el print debajo de cada case y un break debajo de cada uno, pero yo creo que no es necesario según te lo pone el enunciado.
     }
 }
