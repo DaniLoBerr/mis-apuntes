@@ -59,6 +59,18 @@
     Una solución es cambiar el tipo de dato que pide la función, en vez de convertir el tipo de datos que estamos dando.
   </p>
 
-  <h3></h3>
+  <h3>Out of Bounds</h3>
+  <p>
+    Dentro de este tipo de errores, el más habitual es el "Off-by-one". Este error consiste en que, cuando tenemos un array, a veces no nos damos cuenta de que en informática la posición de partida siempre es 0, es decir, la primera posición de los elementos de un array es la posición 0, por lo tanto, en la posición 1 se encontrará el segundo elemento y así sucesivamente. Entonces, este error off-by-one se suele producir porque le pedimos al programa que haga lo que sea con la posición 5 de un array de cinco elementos (por ejemplo) y el programa nos da error porque no exite dicha posición, no equivocamos por 1, nos pasamos de largo por una posición. Decimos lo de off by one porque nos solemos equivocar por 1.
+  </p>
+
+  <h3>Overflow</h3>
+  <p>
+    Los tipos de datos tienen unos tamaños específicos, y cuyos valores equivalentes en la tabla ASCII ocupan como máximo 255 en cada posición de memoria (se reflejan desde el -128 al 127). Entonces si nosotros intentamos guardar en la memoria una valor más alto de 127, incurriremos en el overflow. En principio el IDE no nos dejaría hacerlo porque se daría cuenta del error, pero si lograramos engañarlo y,por ejemplo, intentásemos sumar 5 al 127, como 127 es el máximo, el programa volvería a empezar a contar desde el -128 y se sumaría el excedente desde ese 128. En este caso, 127 + 5 nos daría como resultado -124.
+
+    Es importante indicar el tipo de dato que se va a almacenar por este tipo de cosas porque por ejemplo si intentáramos guardar en un tipo de dato byte un número muy alto de resultados de una consulta a una base de datos, no nos cabría. (En el ejemplo del proyecto en intellij probamos esto del overflow con una variable tipo byte).
+
+    Es importante la optimización del código pensando en la optimización de la memoria.
+  </p>
 </body>
 </html>
