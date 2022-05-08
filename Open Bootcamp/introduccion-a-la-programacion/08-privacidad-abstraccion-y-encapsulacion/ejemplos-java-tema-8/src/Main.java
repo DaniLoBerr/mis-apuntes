@@ -14,7 +14,8 @@ public class Main {
         moto.setVelocidadMaxima (50);
         System.out.println("La velocidad máxima de los " + moto.getTipo() + " es de " + moto.getVelocidadMaxima());
         moto.setRapido(false);
-        System.out.println("¿Es rápida la moto ? " + moto.isRapido());
+        System.out.println("¿Es rápida la moto? " + moto.isRapido());
+
     }
 }
 
@@ -48,4 +49,19 @@ class Vehiculo { // Clase vehículo
     public boolean isRapido() { // pero la función getter, en vez de llamarla "getRapido" se debe llamar "isRapido"
         return this.rapido;
     }
+}
+
+abstract class instrumentoMusical { //Ejemplo de clase abstracta
+    private String tipo;
+    public void setTipo (String tipo) { //Ejemplos de métodos normales, funciones comúnes para todos los objetos de la clase
+        this.tipo = tipo;
+    }
+    public String getTipo () {
+        return this.tipo;
+    }
+    private String sonido;
+    abstract public void setSonido (String sonido); //Ejemplos de métodos abstractos
+    abstract public String getSonido(); //NO tienen cuerpo, son prototipos que utilizaremos en la nueva clase derivada de esta
+
+
 }

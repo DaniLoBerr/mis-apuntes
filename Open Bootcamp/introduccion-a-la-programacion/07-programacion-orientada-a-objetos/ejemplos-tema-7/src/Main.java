@@ -49,4 +49,8 @@ class Coche { //Esto es una clase
         velocidadActual +=15; // Expresión corta para sumar el valor 15 a una variable
     }
     public void decelerar(){}
+
+    // No solo se puede sobrecargar el constructor, en este ejemplo final estaríamos sobrecargando el tipo de dato de una misma función
+    public int consumo (int consumo1, int consumo2) {return consumo2-consumo1}
+    public float consumo (float consumo1, float consumo2) {return consumo2-consumo1}
 }
