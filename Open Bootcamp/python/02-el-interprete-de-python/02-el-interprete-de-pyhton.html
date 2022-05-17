@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,7 +9,45 @@
 <body>
   <h1>El intérprete de Python</h1>
   <p>
+    Los archivos Python no se pueden ejecutar de manera nativa en los ordenadores, es necesario tener instalado el intérprete de Python para hacerlo, es decir, para ejecutar cualquier programa escrito en Python es necesario tener instalado su intérprete.
+  </p>
+  <p>
+    Python se encuentra instalado en la carpeta /usr/bin/python* en los SO tipo UNIX de manera predeterminada. Se busca con el comando "ls -l /usr/bin/python*". <!--Pero yo he instalado una versión más moderna de python y se me ha instalado en una carpeta local, ¿Cómo puedo cambiar el path para que mi python predeterminado sea la versión que acabo de instalar?-->
+  </p>
+  <p>
+    Python viene con una herramienta llamada Pip, que sirve para instalar librerías de Python a nivel de sistema. Cada versión de Python tiene su versión de Pip. Para hacerlo, se escribe pip install "x-libreria" y se instalaría la libreria elegida. Para desintalarla, lo mismo con unistall.
+  </p>
+  <p>
+    Para utilizar cualquier librería, lo habitual es leer la documentación de dicha librería. Para hacerlo, se puede encontrar por internet a través de un navegador, pero también se puede hacer desde el intérprete, escribiendo el comando help("x-librería" ) y te aparece la documentación de la librería elegida. Si se quiere buscar algo concreto de esa librería se escribe help(x-libreria.x-concreto).
+  </p>
+  <p>
+    Para buscar paquetes y librerías de Python, se puede utilizar la página pypi.org.
+  </p>
+  <p>
+    Para ver qué paquetes y librerías tenemos instalas con pip, se utiliza el comando pip list.
+    Para utilizar una librería instalada en un proyecto de Python se escribe el comando "import x-libreria".
+    Para saber más sobre una librería que tenemos instaldas, se utiliza el comando "pip show x-librería".
+  </p>
+  <p>
+    Gestión de dependencias: Algunas librerías dependen de otras, es decir, que para instalar y utilizar ciertas librerías es necesario también instalar otras. No habría mucho problema porque cuando quieres instalar una librería que depende de otra automáticamente se instalan las dos. Esta información nos aparecería con el comando "pip show x-librería" en el apartado "requires/requires.by". Si por lo que sea borraramos una librería, quizás otras dejarían de funcionar porque estas dependieran de las anteriores.
+  </p>
+  <h2>Fichero requirements y Virtual envs</h2>
+  <p>
+    Cuando creamos un programa, es necesario crear un fichero especial llamado "requirements.txt". Es especial proque por convención utiliza py. Dentro de este fichero se indican las librerías y modulos necesarios para ejecutar el programa, junto con el sus versiones.
+    PROBLEMA DE PIP. Con Pip no se pueden tener instaladas varias versiones de una misma librería. Cuando por ejemplo instalamos una librería que requiere de una versión de otra librería, esta sobreescribe automáticamente la versión que estaba instalda (mejor dicho desintala una e intala la nueva). Pero esto puede que afecte a otras librerías o a otros programas que necesitaban de esta versión anterior. Por lo que este problema se soluciona con los virtual envs o entornos virtuales.
+
+    Hay 3 formas de utilizar los virtual envs:
     
+    - Una manera (la fea) es utilizando el comando "virtualenv" + el nombre que le daremos al virtual env. Si utilizamos este comando en un directorio, ese directorio tendrá un entorno virtual con una versión específica de Python, del pip, de las librerías, etc. Lo mismo se podría hacer en cada directorio. Cada uno tendra su versión de todo y sería una versión aparte de la del sistema operativo, sería una versión virtual. Para activar un virtual env, habría que escribir el comando "source carpeta-del-programa-donde-esta-el-virtual-env/nombre-que-le-dimos-al-virtual-env/bin/activate". Una vez activado, ya podríamos instalar con pip las librerías que quisieramos y se instalarían en ese entorno virtual. Para desactivar el entorno, se escribiría "deactivate".
+    De esta manera, cuando se ejecuta cierta código, se activan unos entornos u otros.
+
+    La forma habitual de trabajar con los entornos virtuales es que se crea una carpeta denominada "virtualenvs" y dentro de esa carpeta se van creando los virtual envs con los nombre de cada librería o cada cosa por lo que se crea el virtual env. Cada uno creará una carpeta con el nombre que le hemos puesto al virtual env y contendrá una ruta específica con la que activar cada virtual env. Por ejmplo, para un virtual env llamado scipy dentro de una carpeta llamada virtualenvs, la ruta para activarlo sería virtualenvs/scipy/bin/activate y es la que utilizaríamos con el comando source.
+
+    - La manera mala de trabajar con virtualenvs sería utilizar "pyenv". Pyenv tiene el problema de que no funciona en windows. Pyenv y virtualenv hacen lo mismo pero de diferente forma.
+
+    Pyenv nos permite instalar versiones deiferentes de python para cada entorno virtual. Con virtual env esto no se puede, con virtual env solo se pueden utilizar las versión que tengamos instaladas en nuestro ordenador y lo que hace es copiar la que seleccionemos en cada entorno virtual. Con pyenv, podemos instalar la versión qeu sea de pyhton en cada uno, aunque no esté instalada en el sistema operativo. Con el comando "pyenv install --list", no sale una lista de todas las versiones que podemos instalar.
+
+    - La manera buena para gestionar los entornos virtuales es "pipenv". Para crear un entorno virtul, escribimos "pipenv shell". 
   </p>
 </body>
 </html>
