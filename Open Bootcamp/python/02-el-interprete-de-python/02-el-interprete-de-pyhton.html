@@ -45,9 +45,26 @@
 
     - La manera mala de trabajar con virtualenvs sería utilizar "pyenv". Pyenv tiene el problema de que no funciona en windows. Pyenv y virtualenv hacen lo mismo pero de diferente forma.
 
-    Pyenv nos permite instalar versiones deiferentes de python para cada entorno virtual. Con virtual env esto no se puede, con virtual env solo se pueden utilizar las versión que tengamos instaladas en nuestro ordenador y lo que hace es copiar la que seleccionemos en cada entorno virtual. Con pyenv, podemos instalar la versión qeu sea de pyhton en cada uno, aunque no esté instalada en el sistema operativo. Con el comando "pyenv install --list", no sale una lista de todas las versiones que podemos instalar.
+    Pyenv nos permite instalar versiones deiferentes de python para cada entorno virtual. Con virtual env esto no se puede, con virtual env solo se pueden utilizar las versión que tengamos instaladas en nuestro ordenador y lo que hace es copiar la que seleccionemos en cada entorno virtual. Con pyenv, podemos instalar la versión qeu sea de pyhton en cada uno, aunque no esté instalada en el sistema operativo. Con el comando "pyenv install --list", nos sale una lista de todas las versiones que podemos instalar. Esto nos puede servir para probar un determinado porgrama escrito en python que requiera una determinada vesión de python. Si queremos ver las versiones que tenemos instaladas de Python utilizando pyenv, se escribiría el comando "pyenv versions". SI instalamos múltiples, cambiariamos la versión de Pyhton con pyenv global + la versión elegida. COn python -V nos dice la versión de Python que estamos utilizando.
 
-    - La manera buena para gestionar los entornos virtuales es "pipenv". Para crear un entorno virtul, escribimos "pipenv shell". 
+    - La manera buena para gestionar los entornos virtuales es "pipenv". Es la que más se utiliza hoy en día.
+    Con el comando "pipenv", nos aparecen una seriede comandos para trabajar con él. 
+    Para crear un entorno virtual, escribimos "pipenv shell" en la carpeta que queramos que se cree.
+    "deactivate" para salir del virtualenv y para volver a activarlo, poner otra vez "pipenv shell" dentro de la carpeta del entorno <!--Aunque no parece que funcione esto último.-->
+
+    Para instalar librerías, "pipenv instal librería". Es igual que antes pero sin tener que tener activado el entorno, simplemente con meterse en la carpeta del entorno e instalar la librería, ya se instala de manera virtual en ese entorno.
+    nos crea dos archivos, no llamado Pipfile y otro Pipfile.lock. El archivo Pipfile es un archivo de texto en el que aparacen reflejadas las librerías que vamos instalando en el entorno virtual.
+    "pipenv uninstall librería" para desinstalar x librería.
+
+    Cosas guays de pipenv: Se pueden instalar paquetes o librerías desde el código fuente, es decir, con un comando se puede instalar una librería de internet, por ejemplo desde un repositorio de github. "pipenv install -e git+URL#egg=requests". Esto podría necesitar hacerse por ejemplo en empresas que tengan creados paquetes de instalación propios.
+
+    El archivo pipenv.lock es un fichero en formato JSON. Cumple la misma función que el requirements.txt del pip a secas. Con el comando "pipenv lock" bloqueamos el fichero pipfile.lock y así podemos pasarselo a otro compañero u otro usuario. Este compañero con este fichero pipfile.lock podrá crear un entorno virtual con las mismas librerías y paquetes que el nuestro, es decir, ese archivo reproducirá en otro entorno nuestro mismo entorno original. Lo que haríamos sería copiar el archivo pipfile.lock en el directorio donde vayamos a crear el nuevo entorno virtual y ejecutaríamos el comando "pipenv install --ignore-pipfile".
+
+    Con el entorno virtual activado y el comando "pipenv graph" se pueden ver las dependencias que tenemos en este entorno, es decir, las librerías que necesitamos y sus versiones para trabajar en ese entorno.
+
+    pipenv tiene una herramienta, un subcomando muy util, "pipenv check", el cual si tenemos una librería de dudosa procedencia o que tiene fallos conocidos. Si lo ejecutamos en nuestro entorno virtual, nos checkea las librerías que tenemos instaladas y nos informa de los problemas que estas puedan tener.
+
+    FLUJO DE TRABAJO HABITUAL. Creamos una carpeta para nuestro proyecto, creamos el entorno virtual con pipenv shell. pipenv shell para activar el entorno, exit para salir.
   </p>
 </body>
 </html>
